@@ -38,13 +38,22 @@
             margin: 10px 0 5px;
             font-weight: bold;
         }
-        input, select {
+        input, select, button {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
+        }
+        button {
+            background-color: #2e7d32;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #256327;
         }
         .result {
             background: #e9f7ef;
@@ -89,6 +98,7 @@
 
         <label>為替レート（円/USD）</label>
         <input type="number" id="rate" value="150">
+        <button onclick="fetchExchangeRate()">為替レート更新</button>
 
         <label>広告費率（%）</label>
         <input type="number" id="promoFee" value="2">
@@ -101,7 +111,7 @@
 
         <div class="result" id="profitResult">利益：0 円</div>
         <div class="result" id="profitRateResult">利益率：0 %</div>
-        <div class="note">※為替レートはページ読み込み時に自動更新されます</div>
+        <div class="note">※為替レートはページ読み込み時または更新ボタンで自動取得されます</div>
     </div>
 
     <script>
